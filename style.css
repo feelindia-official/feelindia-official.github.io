@@ -362,6 +362,8 @@ html.js [data-reveal]:not(.in) { animation: revealFallback 0s linear 3s forwards
   .nav { display: none; }
   .menu-btn { display: inline-flex; align-items: center; }
   .brand svg { height: 16px; }
+  .site-header.over { background: var(--ground); }
+  .has-hero main { padding-top: var(--hdr); }
   .hero { height: auto; min-height: 0; overflow: visible; background: none; }
   .hero-media { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--wall); }
   .hero-media img { object-position: 76% 50%; }
