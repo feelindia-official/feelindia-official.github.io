@@ -8,6 +8,7 @@
 .lp-hero img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 70% 28%; }
 .lp-title { font-size: 20px; font-weight: 600; letter-spacing: -.02em; margin: 32px 0 16px; }
 .lp-list { display: grid; gap: 12px; }
+.lp-size { font-size: 14px; color: var(--ink-2); margin: -8px 0 4px; }
 .lp-item { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: center; background: var(--paper); padding: 12px; }
 .lp-thumb img { width: 96px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
 .lp-info h2 { font-size: 16px; font-weight: 600; line-height: 1.4; margin: 0; }
