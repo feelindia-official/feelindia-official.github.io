@@ -1,0 +1,20 @@
+/* FEEL INDIA link-in-bio page (links.html). Uses the tokens from style.css. 2026-11-19 */
+.lp-wrap { max-width: 480px; margin: 0 auto; padding: 32px 20px 40px; }
+.lp-head { text-align: center; }
+.lp-logo { display: inline-block; }
+.lp-logo svg { display: block; height: 20px; width: auto; }
+.lp-intro { margin: 16px 0 0; font-size: 16px; color: var(--ink-2); }
+.lp-hero { margin: 24px 0 0; }
+.lp-hero img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 70% 28%; }
+.lp-title { font-size: 20px; font-weight: 600; letter-spacing: -.02em; margin: 32px 0 16px; }
+.lp-list { display: grid; gap: 12px; }
+.lp-item { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: center; background: var(--paper); padding: 12px; }
+.lp-thumb img { width: 96px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.lp-info h2 { font-size: 16px; font-weight: 600; line-height: 1.4; margin: 0; }
+.lp-info p { font-size: 13.5px; line-height: 1.6; color: var(--ink-2); margin: 4px 0 12px; }
+.lp-buy { min-height: 40px; padding: 0 16px; font-size: 14px; }
+.lp-more { display: grid; gap: 8px; margin-top: 28px; }
+.lp-more a { display: flex; align-items: center; justify-content: center; min-height: 48px; border: 1px solid var(--ink); text-decoration: none; font-weight: 600; font-size: 15px; transition: background-color .2s var(--ease), color .2s var(--ease); }
+.lp-more a:hover { background: var(--ink); color: var(--ground); }
+.lp-note { text-align: center; font-size: 13.5px; color: var(--ink-3); margin: 20px 0 0; }
+.lp-foot { text-align: center; font-size: 12px; color: var(--ink-3); margin: 24px 0 0; }
