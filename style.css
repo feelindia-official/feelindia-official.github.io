@@ -585,6 +585,31 @@ html.js [data-reveal]:not(.in) { animation: revealFallback 0s linear 3s forwards
   .hero-count { display: none; }
 }
 
+/* ===== v4.2 (2026-11-20, owner: "change the colour choosing option into a top level design") =====
+   Round fabric chips (sharp crops of the real fabric, or drawn from the real colours), the name under each,
+   a thin ink ring drawn with box-shadow when selected. Focus ring is an outline (never transitioned). */
+.pdp .opt-color { display: flex; align-items: baseline; gap: 12px; }
+.pdp .opt-color span { margin-left: 0; }
+.pdp .opt-color .ol-k { font-weight: 600; color: var(--ink); }
+.pdp .opt-color .ol-v { color: var(--ink-3); font-weight: 400; }
+.pdp .colors { display: grid; grid-template-columns: repeat(auto-fill, 76px); gap: 20px 12px; margin-top: 16px; }
+.pdp .colors button.cs { all: unset; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 76px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.pdp .cs-img { position: relative; display: block; width: 60px; height: 60px; border-radius: 50%; overflow: hidden; background: var(--ground-2); box-shadow: 0 0 0 4px var(--ground), 0 0 0 5px transparent; transition: box-shadow .25s var(--ease); }
+.pdp .cs-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pdp .cs-img::after { content: ''; position: absolute; inset: 0; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--hairline); pointer-events: none; }
+.pdp .cs-nm { font-size: 12.5px; line-height: 1.35; letter-spacing: -.01em; color: var(--ink-3); text-align: center; word-break: keep-all; overflow-wrap: anywhere; transition: color .2s var(--ease); }
+.pdp .colors button.cs[aria-pressed="true"] .cs-img { box-shadow: 0 0 0 4px var(--ground), 0 0 0 5.5px var(--ink); }
+.pdp .colors button.cs[aria-pressed="true"] .cs-nm { color: var(--ink); font-weight: 600; }
+.pdp .colors button.cs:focus-visible .cs-img { outline: 2px dashed var(--night); outline-offset: 8px; }
+@media (hover: hover) {
+  .pdp .colors button.cs:not([aria-pressed="true"]):hover .cs-img { box-shadow: 0 0 0 4px var(--ground), 0 0 0 5px var(--line); }
+  .pdp .colors button.cs:hover .cs-nm { color: var(--ink); }
+}
+@media (max-width: 380px) { .pdp .colors { grid-template-columns: repeat(auto-fill, 68px); gap: 16px 8px; } .pdp .colors button.cs { width: 68px; } .pdp .cs-img { width: 56px; height: 56px; } }
+@media (prefers-reduced-motion: reduce) { .pdp .cs-img, .pdp .cs-nm { transition: none; } }
+/* 2026-11-20: headings inside navy bands keep the light text colour (the global h1-h3 ink rule was overriding it) */
+.night h1, .night h2, .night h3, .night .statement { color: var(--on-night); }
+
 /* product colour tokens (generated from data.mjs) */
 :root {
   --p-green: #55613A;
