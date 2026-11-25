@@ -3,25 +3,26 @@
 /* Hallmark · answered F15 · column gaps differ on purpose between product grids (tight) and editorial splits (wide) */
 
 :root {
-  --ground: #F5F4F1;
-  --ground-2: #E9E4DA;
-  --ink: #141414;
-  --ink-2: #2F2D2A;
-  --ink-3: #57544E;
-  --line: #D7D2C8;
+  /* 2026-11-25 owner pick: B Stone (the grey plaster wall of the first banner, carried through the whole site). Porcelain #F5F4F1 retired. */
+  --ground: #E2E1DD;
+  --ground-2: #D6D4CF;
+  --ink: #202329;
+  --ink-2: #353841;
+  --ink-3: #535761;
+  --line: #C5C3BD;
   --night: #1C2340;
   --night-2: #2A3358;
-  --on-night: #F1F0EA;
-  --on-night-2: #BFC3D4;
+  --on-night: #F4F5F8;
+  --on-night-2: #BDC1D0;
   --marigold: #E39B2D;
-  --paper: #FCFBF8;
-  --greige: #E6E1D8;
+  --paper: #ECEBE8;
+  --greige: #D9D7D2;
   --butter: #EEE2B6;
   --sage: #C5C8B4;
   --dusty: #C9D1D8;
   --wall: #A9A299;
-  --hairline-soft: rgb(20 20 20 / .08);
-  --hairline: rgb(20 20 20 / .14);
+  --hairline-soft: rgb(32 35 41 / .09);
+  --hairline: rgb(32 35 41 / .16);
   --cap-shadow: rgb(20 20 20 / .35);
   --scrim: rgb(20 20 20 / .42);
   --on-photo: #FAF9F6;
@@ -338,7 +339,7 @@ details p, details table { color: var(--ink-2); }
 .sym-steps figcaption { font-size: 14px; color: var(--ink-3); margin-top: 8px; }
 .palette { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px var(--gap); margin-top: 48px; }
 .chip { aspect-ratio: 3 / 2; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
-.chip-porcelain { background: var(--ground); } .chip-ink { background: var(--ink); } .chip-night { background: var(--night); } .chip-greige { background: var(--greige); }
+.chip-stone { background: var(--ground); } .chip-ink { background: var(--ink); } .chip-night { background: var(--night); } .chip-greige { background: var(--greige); }
 .chip-butter { background: var(--butter); } .chip-sage { background: var(--sage); } .chip-dusty { background: var(--dusty); } .chip-marigold { background: var(--marigold); }
 .palette h3 { font-size: 17px; font-weight: 600; margin: 16px 0 0; }
 .pal-en { font-size: 14px; color: var(--ink-3); margin: 0; }
@@ -638,10 +639,6 @@ html.js [data-reveal]:not(.in) { animation: revealFallback 0s linear 3s forwards
   --field-ink-2: #2F2D2A;
   --field-ink-3: #4F4C46;
   --field-hairline: rgb(20 20 20 / .14);
-  --tp-shade: rgb(20 20 20 / .6);
-  --tp-ring: rgb(255 255 255 / .4);
-  --tp-dark-ink: #F0F0EE;
-  --tp-light-ink: #141414;
 }
 
 /* ---- type rules ---- */
@@ -738,40 +735,16 @@ h1[lang="en"], h2[lang="en"], h3[lang="en"], [lang="en"].statement { font-stretc
 }
 
 /* =====================================================================================================
-   Background options (owner preview: add ?theme=white | stone | cool | concrete | indigo | black to any page).
-   The default (porcelain) stays until the owner picks one. Each option comes from a palette seen on real
-   award-gallery sites, with our night indigo as the action colour. Contrast: running text 10:1 or more,
-   notes 5.5:1 or more, buttons 9:1 or more against the page.
+   Background (owner pick 2026-11-25): B Stone, now the :root default above. The six options that were compared
+   (white, stone, cool, concrete, indigo, black) are documented in _tools/themes/README.md (commit 490140f).
    ===================================================================================================== */
-/* A. White cube: a clean gallery white, cool near-black type, indigo bands */
-html[data-theme="white"] { --ground: #FAFAFA; --ground-2: #EFEFF1; --paper: #FEFEFE; --greige: #EEEEF0; --ink: #111318; --ink-2: #2A2D34; --ink-3: #565A64; --line: #DEDFE3; --hairline: rgb(17 19 24 / .12); --hairline-soft: rgb(17 19 24 / .07); --on-night: #F4F5F8; --on-night-2: #BCC1D3; }
-/* B. Stone: the grey plaster wall of the first banner carried through the whole site */
-html[data-theme="stone"] { --ground: #E2E1DD; --ground-2: #D6D4CF; --paper: #ECEBE8; --greige: #D9D7D2; --ink: #202329; --ink-2: #353841; --ink-3: #535761; --line: #C5C3BD; --hairline: rgb(32 35 41 / .16); --hairline-soft: rgb(32 35 41 / .09); --on-night: #F4F5F8; --on-night-2: #BDC1D0; }
-/* C. Cool grey with indigo bands: city light, and whole sections turn night indigo */
-html[data-theme="cool"] { --ground: #ECEEF1; --ground-2: #E1E4E9; --paper: #F5F6F8; --greige: #E3E6EA; --ink: #0F1115; --ink-2: #272B32; --ink-3: #525966; --line: #CDD2D9; --hairline: rgb(15 17 21 / .13); --hairline-soft: rgb(15 17 21 / .07); --on-night: #F4F5F8; --on-night-2: #C3C8D8; --band-2: #252D50; --band-ink: #F4F5F8; --band-ink-2: #D9DDE8; --band-ink-3: #B4BACB; --band-line: rgb(244 245 248 / .2); --band-action-ink: #1C2340; --band-action-hover: #FAFAF7; }
-html[data-theme="cool"] :is(.symbol, .tint, .pdp-story-sec) { --ground: var(--night); --ground-2: var(--band-2); --ink: var(--band-ink); --ink-2: var(--band-ink-2); --ink-3: var(--band-ink-3); --line: var(--band-line); --hairline: var(--band-line); --action: var(--band-ink); --action-ink: var(--band-action-ink); --action-hover: var(--band-action-hover); background: var(--night); color: var(--ink); }
-html[data-theme="cool"] .symbol .knot path { stroke: var(--band-ink); }
-/* D. Concrete: a mid grey like the new city photos, so the studio shots sit on it like prints on a wall */
-html[data-theme="concrete"] { --ground: #C8C8C6; --ground-2: #BCBCBA; --paper: #D3D3D1; --greige: #C2C2C0; --ink: #0E0E0F; --ink-2: #232325; --ink-3: #38383C; --line: #A9A9A8; --hairline: rgb(14 14 15 / .18); --hairline-soft: rgb(14 14 15 / .1); --on-night: #F0F0EE; --on-night-2: #BFC3D3; }
-/* E. Night indigo: the whole site in our main colour; bands and footer flip to bone; actions are bone with indigo type */
-html[data-theme="indigo"] { --ground: #12162B; --ground-2: #1A1F38; --paper: #1F2541; --greige: #1A1F38; --ink: #EEF0F6; --ink-2: #CDD1DD; --ink-3: #A4AABF; --line: #2E3554; --hairline: rgb(238 240 246 / .14); --hairline-soft: rgb(238 240 246 / .08); --night: #ECEAE4; --night-2: #F8F7F3; --on-night: #12162B; --on-night-2: #454A5E; }
-/* F. Soft black: photographs carry all the colour; indigo bands; actions are bone */
-html[data-theme="black"] { --ground: #111111; --ground-2: #1A1A1B; --paper: #1E1E20; --greige: #1A1A1B; --ink: #F0F0EE; --ink-2: #CFCFCB; --ink-3: #A3A39F; --line: #2F2F31; --hairline: rgb(240 240 238 / .14); --hairline-soft: rgb(240 240 238 / .08); --action: #ECEAE4; --action-ink: #111111; --action-hover: #FAF9F5; }
-html[data-theme="black"] :is(.symbol-mark, .nf) .knot path { stroke: var(--ink); }
 
-/* colour chips and product dots stay visible on the dark options; chip names keep two equal lines */
-:root { --chip-ring: rgb(20 20 20 / .14); }
-html[data-theme="indigo"], html[data-theme="black"] { --chip-ring: rgb(240 240 238 / .45); }
+/* colour chips and product dots keep a thin edge; chip names keep two equal lines */
+:root { --chip-ring: rgb(32 35 41 / .16); }
 .pdp .cs-img::after { box-shadow: inset 0 0 0 1px var(--chip-ring); }
 .sw { box-shadow: inset 0 0 0 1px var(--chip-ring); }
 .pdp .cs-nm { min-height: 2.7em; }
 
-/* owner preview switch (only with ?theme=…) */
-.tp-bar { position: fixed; z-index: 70; left: 8px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; padding: 8px; border-radius: 30px; background: var(--tp-shade); }
-.tp-bar a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--tp); color: var(--tp-light-ink); box-shadow: inset 0 0 0 1px var(--tp-ring); font-family: var(--f-sans); font-size: 13px; font-weight: 700; line-height: 1; text-decoration: none; }
-.tp-bar a.dk, .tp-bar .tp-x { color: var(--tp-dark-ink); }
-.tp-bar .tp-x { background: none; box-shadow: none; font-size: 20px; font-weight: 400; }
-.tp-bar a[aria-current="true"] { outline: 2px solid var(--marigold); outline-offset: 2px; }
 
 /* product colour tokens (generated from data.mjs) */
 :root {
