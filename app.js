@@ -121,3 +121,17 @@
     }));
   }
 })();
+
+// 2026-11-25 owner preview of the background options. Shows only after opening a page with ?theme=… (kept for the visit).
+// Customers never see it. ?theme=off ends the preview.
+(() => {
+  const d = document, cur = d.documentElement.getAttribute('data-preview');
+  if (!cur) return;
+  const T = [['now', '현재', '#F5F4F1'], ['white', 'A', '#FAFAFA'], ['stone', 'B', '#E2E1DD'], ['cool', 'C', '#ECEEF1'], ['concrete', 'D', '#C8C8C6'], ['indigo', 'E', '#12162B'], ['black', 'F', '#111111']];
+  const href = (k) => { const u = new URL(location.href); u.searchParams.set('theme', k); return u.pathname.split('/').pop() + u.search + u.hash; };
+  const nav = d.createElement('nav');
+  nav.className = 'tp-bar';
+  nav.setAttribute('aria-label', '배경 샘플 바꾸기');
+  nav.innerHTML = T.map(([k, n, c]) => `<a href="${href(k)}" style="--tp:${c}"${k === 'indigo' || k === 'black' ? ' class="dk"' : ''}${k === cur ? ' aria-current="true"' : ''} title="${n === '현재' ? '현재 배경' : '샘플 ' + n}"><span>${n === '현재' ? '지금' : n}</span></a>`).join('') + `<a class="tp-x" href="${href('off')}" title="샘플 보기 끝내기"><span>×</span></a>`;
+  d.body.appendChild(nav);
+})();
